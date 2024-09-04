@@ -1,0 +1,314 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-image: url("/pattern.png");
+  color: rgb(230, 230, 230);
+  font-family: "Roboto";
+}
+
+html {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  width: 100%;
+  height: 80px;
+}
+
+.navigation {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 10px;
+  gap: 10px;
+  text-decoration: none !important;
+}
+
+@media (min-width: 530px) {
+  .navigation {
+    gap: 75px;
+    padding-left: 45px;
+    padding-right: 40px;
+  }
+}
+
+.navigation li {
+  padding-left: 20px;
+  padding-right: 20px;
+  list-style: none;
+  height: 100%;
+  color: rgba(220, 220, 220, 0.726);
+  font-family: "Roboto";
+  font-size: 1rem;
+}
+
+.container {
+  width: 350px !important;
+  border-radius: 10px;
+  background: linear-gradient(145deg, #438387, #4f9ba1);
+  box-shadow: 31px 10px 30px #3e7a7e, -20px -1px 40px #56a8ae;
+}
+
+@media (min-width: 530px) {
+  .container {
+    width: 600px !important;
+  }
+}
+
+input[type="text"] {
+  text-align: left;
+  font-family: "roboto";
+  color: rgb(232, 232, 232);
+  border: none;
+  background: transparent;
+  font-size: 18px;
+  font-weight: 300;
+  border-bottom: 0px solid #b6b6b645;
+  transition: border-bottom 0.1s ease;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border-bottom: 1px solid #d6d6d6d5;
+}
+.input-group {
+  margin: 0px;
+  max-width: 300px;
+  min-height: 75px;
+  padding-left: 35px !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.input-container {
+  flex-grow: 2;
+}
+
+@media (min-width: 530px) {
+  .input-group {
+    padding-left: 225px;
+    gap: 240px !important;
+  }
+}
+
+.submit-button {
+  font-size: 17px;
+  font-weight: 700;
+  margin-left: 10px;
+  padding: 0.5em 1em;
+  border: transparent;
+  box-shadow: 0 5px 16px 0 rgba(0, 0, 0, 0.24);
+  background: #616161b3;
+  border-radius: 50px;
+  color: #4a9196;
+  transition: color 0.2s;
+  font-family: "Roboto";
+}
+
+.submit-button:hover {
+  transition: 0.3s;
+  background: linear-gradient(90deg, #4a9196 25%, #a997bb 100%);
+  box-shadow: 0 5px 16px 0 rgba(164, 164, 164, 0.12);
+
+  cursor: pointer;
+  color: rgb(218, 218, 218);
+}
+
+.submit-button:active {
+  transform: translate(0em, 0.2em);
+}
+
+.submit-button span {
+  font-weight: 800;
+  letter-spacing: 2px;
+  background: linear-gradient(90deg, #4a9196 25%, #a997bb 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: 0.2s;
+}
+
+.submit-button:hover span {
+  background: #2e2e2e;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: 0.2s;
+}
+
+::placeholder {
+  color: rgba(184, 184, 184, 0.564);
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.item-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.item-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.loading-spinner {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.item {
+  height: 75px;
+  width: 100%;
+  text-align: left;
+  border-bottom: 1px solid;
+  border-color: #5a5a5a7a;
+  color: #dadada;
+  transition: max-height ease 0.3s;
+}
+
+.item-text {
+  font-weight: 300;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: ease-in-out 0.2s;
+}
+
+.item-text:hover {
+  text-shadow: 10px 10px 20px#ffffffb4;
+}
+
+@media (min-width: 530px) {
+  .item-text {
+    font-size: 1.25rem !important;
+  }
+}
+.hamburger {
+  cursor: pointer;
+  padding-left: 30px;
+  gap: 30px;
+}
+
+.hamburger input {
+  display: none;
+}
+
+.hamburger svg {
+  padding-top: 2px;
+  height: 1.5em;
+  transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: text-shadow ease-in-out 0.2s;
+}
+
+.hamburger:hover {
+  text-shadow: 10px 10px 20px#ffffffb4;
+}
+
+.line {
+  fill: none;
+  stroke: white;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 3;
+  transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+  stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line-top-bottom {
+  stroke-dasharray: 12 63;
+}
+
+.hamburger input:checked + svg {
+  transform: rotate(-45deg);
+}
+
+.hamburger input:checked + svg .line-top-bottom {
+  stroke-dasharray: 20 300;
+  stroke-dashoffset: -32.42;
+}
+
+.line {
+  border-color: rgb(107, 107, 107);
+  border-width: 1px;
+  opacity: 50%;
+  margin-top: 50px;
+}
+
+.line2 {
+  border-top: 1px;
+  border-color: rgba(212, 212, 212, 0.558);
+  margin-top: 50px;
+}
+
+.footer-icons {
+  color: rgb(232, 232, 232);
+  padding: 2px;
+}
+
+.footer-icons:hover {
+  opacity: 1;
+  transform: scale(1.1) translateY(-5%);
+}
+
+@media (min-width: 900px) {
+  .footer-icons {
+    padding: 15px;
+  }
+}
+
+.hvr-bounce-to-left {
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0);
+  padding: 10px;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+}
+.hvr-bounce-to-left:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #7a8c89;
+  border-radius: 5px;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: 100% 50%;
+  transform-origin: 100% 50%;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-bounce-to-left:hover,
+.hvr-bounce-to-left:focus,
+.hvr-bounce-to-left:active {
+  color: white;
+}
+.hvr-bounce-to-left:hover:before,
+.hvr-bounce-to-left:focus:before,
+.hvr-bounce-to-left:active:before {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+  -webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+  transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+}
