@@ -1,11 +1,14 @@
-/* eslint-disable react/prop-types */
-import { Grid2 } from "@mui/material";
+import { Grid2, Typography } from "@mui/material";
 
-export const Title = ({ titlePage: String }) => {
+interface TitleProps {
+    titlePage: string;
+}
+
+export const Title: React.FC<TitleProps> = ({ titlePage }) => {
     return (
         <Grid2
             container
-            style={{
+            sx={{
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
@@ -23,8 +26,8 @@ export const Title = ({ titlePage: String }) => {
                     lineHeight: "0",
                 }}
             >
-                <p
-                    style={{
+                <Typography
+                    sx={{
                         fontWeight: 500,
                         fontSize: "2.5rem",
                         letterSpacing: "0.5rem",
@@ -33,11 +36,11 @@ export const Title = ({ titlePage: String }) => {
                     }}
                 >
                     {titlePage}
-                </p>
-                <p style={{ color: "rgb(230, 230, 230)" }}>
+                </Typography>
+                <Typography sx={{ color: "rgb(230, 230, 230)" }}>
                     Write <span style={{ fontWeight: 500 }}>down</span>, Check{" "}
                     <span style={{ fontWeight: 500 }}>off</span>
-                </p>
+                </Typography>
             </Grid2>
         </Grid2>
     );
