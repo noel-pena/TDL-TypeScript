@@ -2,7 +2,7 @@ import { styled } from '@mui/material/styles';
 import { Box, List, ListItem, Link } from '@mui/material';
 import type { Theme } from '@mui/material';
 
-export const HeaderContainer = styled(Box)(({ theme }: { theme: Theme }) => ({
+export const HeaderContainer = styled(Box)(() => ({
     width: '100%',
     height: '80px',
     display: 'flex',
