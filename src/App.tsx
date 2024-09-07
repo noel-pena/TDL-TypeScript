@@ -6,7 +6,6 @@ import {TodayNotes} from "./pages/TodayNotes";
 
 function App() {
 
-
   return (
     <>
         <Router>

@@ -48,8 +48,9 @@ export const NavigationLink = styled(Link)<LinkProps>(({ theme }: { theme: Theme
 
 import type { ListItemProps } from '@mui/material/ListItem';
 export const NavigationItem = styled(ListItem)<ListItemProps>(({ theme }: { theme: Theme }) => ({
-    paddingLeft: '20px',
-    paddingRight: '20px',
+    paddingLeft: '30px',
+    paddingRight: '30px',
+    fontWeight: 600,
     color: 'rgba(220, 220, 220, 0.726)',
     cursor: 'pointer',
     position: 'relative',

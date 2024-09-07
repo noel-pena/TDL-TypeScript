@@ -38,9 +38,9 @@ export const Title: React.FC<TitleProps> = ({ titlePage }) => {
                 >
                     {titlePage}
                 </Typography>
-                <Typography sx={{ color: "rgb(230, 230, 230)" }}>
-                    Write <span style={{ fontWeight: 500 }}>down</span>, Check{" "}
-                    <span style={{ fontWeight: 500 }}>off</span>
+                <Typography sx={{ fontWeight: 200, color: "rgb(230, 230, 230)" }}>
+                    Write <span style={{ fontWeight: 600 }}>down</span>, Check{" "}
+                    <span style={{ fontWeight: 600 }}>off</span>
                 </Typography>
             </Grid2>
         </Grid2>
