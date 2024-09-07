@@ -1,4 +1,5 @@
 import { Grid2, Typography } from "@mui/material";
+import React from "react";
 
 interface TitleProps {
     titlePage: string;

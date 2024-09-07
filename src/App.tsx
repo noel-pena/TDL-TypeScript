@@ -11,7 +11,7 @@ function App() {
     <>
         <Router>
             <Routes>
-                <Route exact path="/" element={<TodayNotes />} />
+                <Route path="/" element={<TodayNotes />} />
                 {/*<Route path="/week" element={<WeekNotes />} />*/}
                 {/*<Route path="/month" element={<MonthNotes />} />*/}
             </Routes>
