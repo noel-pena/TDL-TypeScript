@@ -1,14 +1,15 @@
 import { styled } from '@mui/material/styles';
 import { Box, List, ListItem, Link } from '@mui/material';
+import type { Theme } from '@mui/material';
 
-export const HeaderContainer = styled(Box)(({ theme }) => ({
+export const HeaderContainer = styled(Box)(({ theme }: { theme: Theme }) => ({
     width: '100%',
     height: '80px',
     display: 'flex',
     justifyContent: 'center',
 }));
 
-export const NavigationList = styled(List)(({ theme }) => ({
+export const NavigationList = styled(List)(({ theme }: { theme: Theme }) => ({
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
@@ -17,7 +18,8 @@ export const NavigationList = styled(List)(({ theme }) => ({
     paddingRight: theme.breakpoints.down('sm') ? '10px' : '40px',
 }));
 
-export const NavigationLink = styled(Link)(({ theme }) => ({
+import type { LinkProps } from '@mui/material/Link';
+export const NavigationLink = styled(Link)<LinkProps>(({ theme }: { theme: Theme }) => ({
     fontWeight: 200,
     fontSize: '1rem',
     position: 'relative',
@@ -44,7 +46,8 @@ export const NavigationLink = styled(Link)(({ theme }) => ({
     },
 }));
 
-export const NavigationItem = styled(ListItem)(({ theme }) => ({
+import type { ListItemProps } from '@mui/material/ListItem';
+export const NavigationItem = styled(ListItem)<ListItemProps>(({ theme }: { theme: Theme }) => ({
     paddingLeft: '20px',
     paddingRight: '20px',
     color: 'rgba(220, 220, 220, 0.726)',
