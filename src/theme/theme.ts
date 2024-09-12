@@ -8,7 +8,7 @@ import '@fontsource/roboto/700.css';
 export const theme = createTheme({
     palette: {
         background: {
-            default: 'rgb(34, 34, 34)',
+            default: '#7a8c89',
         },
         text: {
             primary: 'rgb(230, 230, 230)',
