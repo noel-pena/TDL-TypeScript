@@ -49,7 +49,7 @@ export const Items: React.FC<ItemsProps> = ({ getRequest }) => {
     };
 
     return (
-        <Grid2 container sx={{ pt: 1 }}>
+        <Grid2 container sx={{ py: 4 }}>
             <ItemContainer>
                 {mockItems.map((item) => (
                     <ItemBox key={item._id}>

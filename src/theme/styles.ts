@@ -1,5 +1,5 @@
 import { styled } from '@mui/material/styles';
-import { Box, List, ListItem, Link } from '@mui/material';
+import { Box, List, ListItem, Link, Button, InputBase } from '@mui/material';
 import type { Theme } from '@mui/material';
 
 export const HeaderContainer = styled(Box)(() => ({
@@ -60,33 +60,29 @@ export const NavigationItem = styled(ListItem)<ListItemProps>(({ theme }: { them
     },
 }));
 
-export const ItemContainer = styled(Box)(({ theme }: { theme: Theme }) => ({
+export const ItemContainer = styled(Box)(() => ({
     width: '100%',
-    maxWidth: '600px',
-    margin: 'auto',
     borderRadius: '10px',
     background: '#7a8c89',
     boxShadow: '20px 20px 60px #687774, -20px -20px 60px #8ca19e',
-    padding: '20px',
+    padding: '10px',
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'center',
     alignItems: 'center',
-    boxSizing: 'border-box',
-    [theme.breakpoints.down('sm')]: {
-        width: '90%',
-    },
 }));
 
 export const ItemBox = styled(Box)(() => ({
     height: '75px',
     width: '100%',
     textAlign: 'left',
-    borderBottom: '1px solid rgba(90, 90, 90, 0.48)',
+    borderBottom: '1px solid rgba(90, 90, 90, 0.48)', // Default border for all items
     color: '#dadada',
     display: 'flex',
     alignItems: 'center',
     transition: 'max-height ease 0.3s',
+    '&:last-child': {
+        borderBottom: 'none', // Remove border for the last item
+    },
 }));
 
 export const ItemRow = styled(Box)(() => ({
@@ -114,5 +110,50 @@ export const ItemText = styled(Box)(() => ({
     },
     '@media (min-width: 530px)': {
         fontSize: '1.25rem !important',
+    },
+}));
+
+export const InputGroup = styled(Box)(() => ({
+    width: '100%',
+    height: '75px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginTop: '10px',
+}));
+
+// Input field styled to match the items
+export const InputBox = styled(InputBase)(() => ({
+    flexGrow: 1,
+    color: 'rgb(232, 232, 232)',
+    fontSize: '18px',
+    fontWeight: 300,
+    borderBottom: '1px solid rgba(182, 182, 182, 0.27)',
+    paddingLeft: '10px',
+    paddingRight: '10px',
+    '&:focus': {
+        borderBottom: '1px solid rgba(214, 214, 214, 0.84)',
+    },
+}));
+
+// Submit button styling
+export const SubmitButton = styled(Button)(() => ({
+    fontSize: '17px',
+    fontWeight: 700,
+    marginLeft: '10px',
+    padding: '0.5em 1em',
+    border: 'transparent',
+    boxShadow: '0 5px 16px 0 rgba(0, 0, 0, 0.24)',
+    background: '#616161b3',
+    borderRadius: '50px',
+    color: '#4a9196',
+    transition: 'color 0.2s',
+    '&:hover': {
+        background: 'linear-gradient(90deg, #4a9196 25%, #a997bb 100%)',
+        boxShadow: '0 5px 16px 0 rgba(164, 164, 164, 0.12)',
+        color: 'rgb(218, 218, 218)',
+    },
+    '&:active': {
+        transform: 'translate(0em, 0.2em)',
     },
 }));
