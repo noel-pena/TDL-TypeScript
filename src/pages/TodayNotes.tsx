@@ -12,12 +12,12 @@ export const TodayNotes = () => {
         <ThemeProvider theme={theme}>
             <CssBaseline />
             <Header />
-            <Stack>
+            <Stack sx={{height: "85vh"}}>
                 <Title titlePage="Today" />
                 <Items getRequest="items" />
                 <AddItem customPostRoute="/api/add" />
-                 <Footer />
             </Stack>
+             <Footer />
         </ThemeProvider>
     </Container>
     );

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { Grid2 } from "@mui/material";
-import { CheckBox } from "../util/CheckBox";
+import { Grid2, Checkbox } from "@mui/material";
 import axios from "axios";
 import { ItemContainer, ItemRow, CheckboxLabel, ItemBox, ItemText } from "../theme/styles.ts";
+import {useTheme} from "@mui/material";
 
 interface Item {
     _id: string;
@@ -14,6 +14,7 @@ interface ItemsProps {
 }
 
 export const Items: React.FC<ItemsProps> = ({ getRequest }) => {
+    const theme = useTheme();
     const [items, setItems] = useState<Item[]>([]);
     const [checkedItems, setCheckedItems] = useState<Record<string, boolean>>({});
 
@@ -54,15 +55,25 @@ export const Items: React.FC<ItemsProps> = ({ getRequest }) => {
                 {mockItems.map((item) => (
                     <ItemBox key={item._id}>
                         <ItemRow>
-                            {/*<CheckboxLabel>*/}
+                            <CheckboxLabel>
                             {/*    <input*/}
                             {/*        type="checkbox"*/}
                             {/*        checked={!checkedItems[item._id]}*/}
                             {/*        onChange={() => handleCheckboxChange(item._id)}*/}
                             {/*    />*/}
-                            {/*    <CheckBox />*/}
+                            <Checkbox
+                                checked={checkedItems[item._id]}
+                                size="small"
+                                onChange={() => handleCheckboxChange(item._id)}
+                                sx={{
+                                    color: checkedItems[item._id] ? theme.palette.primary.main : theme.palette.secondary.main,
+                                    '&.Mui-checked': {
+                                        color: theme.palette.success.main,
+                                    },
+                                }}
+                            />
                                 <ItemText>{item.title}</ItemText>
-                        {/*    </CheckboxLabel>*/}
+                            </CheckboxLabel>
                         </ItemRow>
                     </ItemBox>
                 ))}

@@ -13,6 +13,17 @@ export const theme = createTheme({
         text: {
             primary: 'rgb(230, 230, 230)',
         },
+        primary: {
+            main: 'rgb(230, 230, 230)',
+            contrastText: '#ffffff'
+        },
+        secondary: {
+            main: 'rgb(230, 230, 230)',
+            contrastText: '#ffffff'
+        },
+        success: {
+            main: 'rgb(230, 230, 230)'
+        }
     },
     typography: {
         fontFamily: 'Roboto',
