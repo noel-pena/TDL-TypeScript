@@ -56,11 +56,12 @@ export const Items: React.FC<ItemsProps> = ({ getRequest }) => {
                     <ItemBox key={item._id}>
                         <ItemRow>
                             <CheckboxLabel>
-                            {/*    <input*/}
-                            {/*        type="checkbox"*/}
-                            {/*        checked={!checkedItems[item._id]}*/}
-                            {/*        onChange={() => handleCheckboxChange(item._id)}*/}
-                            {/*    />*/}
+                                <input
+                                    type="checkbox"
+                                    hidden // convert to kotlin backend
+                                    checked={!checkedItems[item._id]}
+                                    onChange={() => handleCheckboxChange(item._id)}
+                                />
                             <Checkbox
                                 checked={checkedItems[item._id]}
                                 size="small"
