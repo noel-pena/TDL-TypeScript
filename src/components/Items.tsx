@@ -18,11 +18,11 @@ export const Items: React.FC<ItemsProps> = ({ getRequest }) => {
     const [items, setItems] = useState<Item[]>([]);
     const [checkedItems, setCheckedItems] = useState<Record<string, boolean>>({});
 
-    const mockItems: Item[] = [
-        { _id: "1", title: "The quick brown fox jumped over the lazy dog 1" },
-        { _id: "2", title: "The quick brown fox jumped over the lazy dog 2" },
-        { _id: "3", title: "The quick brown fox jumped over the lazy dog 3" },
-    ];
+    // const mockItems: Item[] = [
+    //     { _id: "1", title: "The quick brown fox jumped over the lazy dog 1" },
+    //     { _id: "2", title: "The quick brown fox jumped over the lazy dog 2" },
+    //     { _id: "3", title: "The quick brown fox jumped over the lazy dog 3" },
+    // ];
 
     useEffect(() => {
         const fetchData = async () => {
@@ -52,7 +52,7 @@ export const Items: React.FC<ItemsProps> = ({ getRequest }) => {
     return (
         <Grid2 container sx={{ py: 3 }}>
             <ItemContainer>
-                {mockItems.map((item) => (
+                {items.map((item) => (
                     <ItemBox key={item._id}>
                         <ItemRow>
                             <CheckboxLabel>
