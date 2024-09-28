@@ -1,6 +1,8 @@
 import { styled } from '@mui/material/styles';
-import { Box, List, ListItem, Link, Button, InputBase } from '@mui/material';
+import { Box, BoxProps, List, ListItem, Link, Button, InputBase } from '@mui/material';
 import type { Theme } from '@mui/material';
+
+type InputGroupProps = BoxProps
 
 export const HeaderContainer = styled(Box)(() => ({
     width: '100%',
@@ -113,7 +115,7 @@ export const ItemText = styled(Box)(() => ({
     },
 }));
 
-export const InputGroup = styled(Box)(() => ({
+export const InputGroup = styled(Box)<InputGroupProps>(() => ({
     width: '100%',
     height: '75px',
     display: 'flex',
@@ -122,7 +124,6 @@ export const InputGroup = styled(Box)(() => ({
     marginTop: '10px',
 }));
 
-// Input field styled to match the items
 export const InputBox = styled(InputBase)(() => ({
     flexGrow: 1,
     color: 'rgb(232, 232, 232)',
@@ -136,7 +137,6 @@ export const InputBox = styled(InputBase)(() => ({
     },
 }));
 
-// Submit button styling
 export const SubmitButton = styled(Button)(() => ({
     fontSize: '17px',
     fontWeight: 700,

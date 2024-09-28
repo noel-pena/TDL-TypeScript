@@ -4,15 +4,17 @@ import { InputGroup, InputBox, SubmitButton } from '../theme/styles.ts'; // Usin
 
 interface AddItemProps {
     customPostRoute: string;
+    getRequest: string;
 }
 
-export const AddItem: React.FC<AddItemProps> = ({ customPostRoute }) => {
+export const AddItem: React.FC<AddItemProps> = ({ customPostRoute, getRequest }) => {
     const [newItem, setNewItem] = useState('');
 
     const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
+        console.log({newItem})
         try {
-            await axios.post(customPostRoute, { newItem });
+            await axios.post(`http://localhost:8080/api/${getRequest}/${customPostRoute}`, { newItem });
             window.location.reload();
         } catch (error) {
             console.log('Error adding item:', error);

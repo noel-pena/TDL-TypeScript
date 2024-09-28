@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Checkbox, Grid2, useTheme } from "@mui/material";
+import {Checkbox, Grid2, useTheme} from "@mui/material";
 import axios from "axios";
 import { ItemContainer, ItemRow, CheckboxLabel, ItemBox, ItemText } from "../theme/styles.ts";
 
@@ -21,7 +21,6 @@ export const Items: React.FC<ItemsProps> = ({ getRequest }) => {
             try {
                 const response = await axios.get(`/api/${getRequest}`);
                 setItems(response.data);
-                console.log(response.data)
             } catch (error) {
                 console.error("Error fetching items:", error);
             }
@@ -30,9 +29,6 @@ export const Items: React.FC<ItemsProps> = ({ getRequest }) => {
     }, [getRequest]);
 
     const handleCheckboxChange = async (itemId: string) => {
-
-        const deleteUrl = `/api/${getRequest}/${itemId}`
-        console.log(deleteUrl)
         try {
             await axios.delete(`/api/${getRequest}/${itemId}`);
             setItems((prevItems) => prevItems.filter((item) => item.id !== itemId));
@@ -44,28 +40,33 @@ export const Items: React.FC<ItemsProps> = ({ getRequest }) => {
     return (
         <Grid2 container sx={{ py: 3 }}>
             <ItemContainer>
-                {items.map((item) => (
-                    <ItemBox key={item.id}>
-                        <ItemRow>
-                            <CheckboxLabel>
-                                <Checkbox
-                                    size="small"
-                                    onChange={() => {
-                                        console.log("Checkbox clicked for item ID:", item.id);
-                                        handleCheckboxChange(item.id);
-                                    }}
-                                    sx={{
-                                        color: theme.palette.secondary.main,
-                                        '&.Mui-checked': {
-                                            color: theme.palette.success.main,
-                                        },
-                                    }}
-                                />
-                                <ItemText>{item.title}</ItemText>
-                            </CheckboxLabel>
-                        </ItemRow>
-                    </ItemBox>
-                ))}
+                {items.length === 0 ? (
+                    <ItemText sx={{p:3}} >
+                        No items found. Let's add something!
+                    </ItemText>
+                ) : (
+                    items.map((item) => (
+                            <ItemBox key={item.id}>
+                                <ItemRow>
+                                    <CheckboxLabel>
+                                        <Checkbox
+                                            size="small"
+                                            onChange={() => {
+                                                handleCheckboxChange(item.id);
+                                            }}
+                                            sx={{
+                                                color: theme.palette.secondary.main,
+                                                '&.Mui-checked': {
+                                                    color: theme.palette.success.main,
+                                                },
+                                            }}
+                                        />
+                                        <ItemText>{item.title}</ItemText>
+                                    </CheckboxLabel>
+                                </ItemRow>
+                            </ItemBox>
+                        ))
+                )}
             </ItemContainer>
         </Grid2>
     );
