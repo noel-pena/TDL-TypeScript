@@ -14,8 +14,8 @@ export const TodayNotes = () => {
             <Header />
             <Stack sx={{height: "85vh"}}>
                 <Title titlePage="Today" />
-                <Items getRequest="items" />
-                <AddItem getRequest="items" customPostRoute="add" />
+                <Items getRequest="today/items" />
+                <AddItem getRequest="today/items" />
             </Stack>
              <Footer />
         </ThemeProvider>

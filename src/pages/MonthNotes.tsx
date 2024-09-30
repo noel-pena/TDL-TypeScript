@@ -1,8 +1,8 @@
 import { Header } from "../components/Header";
 import { Title } from "../components/Title";
-// import { Items } from "../components/Items";
-// import { AddItem } from "../components/sub-components/AddItem";
-// import { Footer } from "../components/Footer";
+import { Items } from "../components/Items";
+import { Footer } from "../components/Footer";
+import { AddItem } from "../util/AddItem.tsx";
 import {CssBaseline, Container, Stack, ThemeProvider} from "@mui/material";
 import theme from "../theme/theme.ts";
 
@@ -12,12 +12,12 @@ export const MonthNotes = () => {
             <ThemeProvider theme={theme}>
                 <CssBaseline />
                 <Header />
-                <Stack>
+                <Stack sx={{height: "85vh"}}>
                     <Title titlePage="Month" />
-                    {/*<AddItem customPostRoute="/api/add"*/}
-                    {/*<Items getRequest="items" />*/}
-                    {/*<Footer />*/}
+                    <Items getRequest="month/items" />
+                    <AddItem getRequest="month/items" />
                 </Stack>
+                <Footer />
             </ThemeProvider>
         </Container>
     );

@@ -3,18 +3,17 @@ import React, { useState, FormEvent } from 'react';
 import { InputGroup, InputBox, SubmitButton } from '../theme/styles.ts'; // Using the styled components
 
 interface AddItemProps {
-    customPostRoute: string;
     getRequest: string;
 }
 
-export const AddItem: React.FC<AddItemProps> = ({ customPostRoute, getRequest }) => {
+export const AddItem: React.FC<AddItemProps> = ({ getRequest }) => {
     const [newItem, setNewItem] = useState('');
 
     const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
         console.log({newItem})
         try {
-            await axios.post(`http://localhost:8080/api/${getRequest}/${customPostRoute}`, { newItem });
+            await axios.post(`http://localhost:8080/api/${getRequest}`, { newItem });
             window.location.reload();
         } catch (error) {
             console.log('Error adding item:', error);
@@ -24,6 +23,8 @@ export const AddItem: React.FC<AddItemProps> = ({ customPostRoute, getRequest })
     const hasLetters = /[a-zA-Z]/.test(newItem);
 
     return (
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-expect-error
         <InputGroup component="form" onSubmit={handleSubmit}>
             <InputBox
                 type="text"
